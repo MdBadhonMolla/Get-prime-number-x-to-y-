@@ -1,52 +1,41 @@
-# Prerequisites
-*.d
+#include<stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main()
+{
+    int inpute1, inpute2, inpute_array_loop, total_array;
+    int i,j,a=0;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("Haw many number to find the prime number : ");
+    scanf("%d",&inpute1);
+    system("cls");
+    printf("Haw many number to find the prime number : %d to ",inpute1);
+    scanf("%d",&inpute2);
+    total_array= inpute2-inpute1;
+    printf("total array %d\n\n\n", total_array);
+    int array[total_array];
 
-# Precompiled Headers
-*.gch
-*.pch
+    for(inpute_array_loop=inpute1; inpute_array_loop<=inpute2; inpute_array_loop++)
+    {
+        array[inpute_array_loop-1]=inpute_array_loop;
+        //printf("%d,",array[inpute_array_loop]);
+    }
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+        for(i=0;i<=total_array;i++)
+        {
+            for(j=1;j<=array[i];j++)
+            {
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+                if(array[i]%j==0)
+                {
+                    a++;
+                }
+            }
+            //printf("<print a : %d>\n",a);
+        if(a<=2)
+        printf("The prime number = %d\n",array[i]);
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+        a=0;
+        }
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+}
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
